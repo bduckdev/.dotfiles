@@ -247,7 +247,7 @@ exec_always pavucontrol
 exec_always obsidian
 exec_always spotify
 exec_always discord
-exec_always telegram_desktop
+exec_always telegram-desktop
 # exec_always emacs --daemon
 # exec_always brave-browser
 

@@ -23,6 +23,13 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 -- search and replace
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
--- Live Server stuff
+-- tmux
+
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+
+-- make executable and run
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+-- live server
 vim.api.nvim_create_user_command("LSS", "LiveServerStart",{})
 vim.api.nvim_create_user_command("LSX", "LiveServerStop",{})
