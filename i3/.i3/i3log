@@ -1,0 +1,16 @@
+12/22/2023 05:57:07 PM - ERROR: Using Xinerama instead of RandR. This option should be avoided at all cost because it does not refresh the list of screens, so you cannot configure displays at runtime. Please check if your driver really does not support RandR and disable this option as soon as you can.
+12/22/2023 05:57:07 PM - i3 4.22 (2023-01-02) starting
+12/22/2023 05:57:07 PM - Parsing configfile /home/bduck/.dotfiles/i3/.config/i3/config
+12/22/2023 05:57:07 PM - Changing working directory to config file directory /home/bduck/.dotfiles/i3/.config/i3
+12/22/2023 05:57:07 PM - deciding for version 4 due to this line: # i3 config file (v4)
+12/22/2023 05:57:07 PM - [libi3] ../libi3/font.c Using Pango font System San Francisco Display, size 9
+12/22/2023 05:57:07 PM - [libi3] ERROR: Refusing to create UNIX socket at /run/user/1000/i3/ipc-socket.3920: Socket is already in use
+i3: Could not create the IPC socket: /run/user/1000/i3/ipc-socket.3920
+12/22/2023 06:21:25 PM - ERROR: Using Xinerama instead of RandR. This option should be avoided at all cost because it does not refresh the list of screens, so you cannot configure displays at runtime. Please check if your driver really does not support RandR and disable this option as soon as you can.
+12/22/2023 06:21:25 PM - i3 4.22 (2023-01-02) starting
+12/22/2023 06:21:25 PM - Parsing configfile /home/bduck/.dotfiles/i3/.config/i3/config
+12/22/2023 06:21:25 PM - Changing working directory to config file directory /home/bduck/.dotfiles/i3/.config/i3
+12/22/2023 06:21:25 PM - deciding for version 4 due to this line: # i3 config file (v4)
+12/22/2023 06:21:25 PM - [libi3] ../libi3/font.c Using Pango font System San Francisco Display, size 9
+12/22/2023 06:21:25 PM - [libi3] ERROR: Refusing to create UNIX socket at /run/user/1000/i3/ipc-socket.1899: Socket is already in use
+i3: Could not create the IPC socket: /run/user/1000/i3/ipc-socket.1899
