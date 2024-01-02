@@ -282,3 +282,9 @@ default_border pixel 3
 
 
 title_align center
+
+# Backlight
+#
+    bindsym XF86MonBrightnessUp exec brightnessctl -c backlight set +10%
+    bindsym XF86MonBrightnessDown exec brightnessctl -c backlight set 10%-
+#

@@ -103,3 +103,13 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 bindkey -s ^f "tmux-sessionizer\n"
+
+# bun completions
+[ -s "/home/bduck/.bun/_bun" ] && source "/home/bduck/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Turso
+export PATH="/home/bduck/.turso:$PATH"
