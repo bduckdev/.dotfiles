@@ -102,7 +102,19 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias i3config="nvim ~/.config/i3/config"
+alias polybarconfig="cd ~/.config/polybar/ && nvim ."
+alias weztermconfig="cd ~/.config/wezterm/ && nvim ."
+alias picomconfig="cd ~/.config/picom/ && nvim ."
+alias alacrittyconfig="cd ~/.config/alacritty/ && nvim ."
+alias scripts="cd ~/.dotfiles/scripts/bin/.local/scripts/ && nvim ."
+alias findfile="fzf --preview 'bat --style=numbers --color=always {}' | xargs -r nvim"
+
+alias ta="tmux a"
 bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^a "tmux a\n"
 
 # bun completions
 [ -s "/home/bduck/.bun/_bun" ] && source "/home/bduck/.bun/_bun"
@@ -110,6 +122,15 @@ bindkey -s ^f "tmux-sessionizer\n"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
+# Scripts
+export PATH="$HOME/bin/.local/scripts:$PATH"
 # Turso
 export PATH="/home/bduck/.turso:$PATH"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+# opam configuration
+[[ ! -r /home/bduck/.opam/opam-init/init.zsh ]] || source /home/bduck/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+[ -f "/home/bduck/.ghcup/env" ] && source "/home/bduck/.ghcup/env" # ghcup-env
+

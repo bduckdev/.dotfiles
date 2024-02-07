@@ -125,3 +125,5 @@ export PATH="$HOME/.config/emacs/bin:$PATH"
 eval "$(starship init bash)"
 
 export PATH=$PATH:/home/bduck/.spicetify
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#if tmux has no servers start a new one detatched
+if [ -z "$TMUX" ]; then
+    tmux new-session -d -s main
+fi
+
