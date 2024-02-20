@@ -102,6 +102,7 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+alias nautilus="echo 'Use the terminal, you fool!'"
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias i3config="nvim ~/.config/i3/config"
@@ -126,8 +127,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/bin/.local/scripts:$PATH"
 # Turso
 export PATH="/home/bduck/.turso:$PATH"
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+# Volta
+#export VOLTA_HOME="$HOME/.volta"
+#export PATH="$VOLTA_HOME/bin:$PATH"
 
 # opam configuration
 [[ ! -r /home/bduck/.opam/opam-init/init.zsh ]] || source /home/bduck/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

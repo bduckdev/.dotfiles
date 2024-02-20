@@ -60,6 +60,12 @@ return {
 			lspconfig.hls.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.clangd.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.bashls.setup({
+				capabilities = capabilities,
+			})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, {})

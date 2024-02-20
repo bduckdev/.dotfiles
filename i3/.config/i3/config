@@ -28,7 +28,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec wezterm
 #bindsym $mod+Return exec wezterm
 
 # kill focused window
@@ -188,18 +188,16 @@ client.urgent           $highlight-color    $highlight-color   $text-color      
 bindsym $mod+r mode "resize"
 
 #bar {
-#    #mode hide
-#    #hidden_state hide
-#    font pango:System San Francisco Display 12
+#    output eDP-1
 #    position top
-##  status_command i3blocks -c /home/bduck/.i3/i3blocks.conf
-#    i3bar_command i3bar --transparency
-#    padding 0 10px
-#    #status_command i3status
-#    #status_command i3blocks
+#    font pango: FontAwesome, System San Francisco Display 14
+#          status_command ~/.config/bumblebee-status/bumblebee-status \
+# -t  rose-pine \
+# -m  memory battery datetime hostname 
+#
 #	colors {
-#		background $bg-color
-#	    	separator #757575
+#    		background $bg-color
+#	    	separator $inactive-bg-color
 #            #                  border             background         text
 #        	focused_workspace  $focused-tab-color $focused-tab-color $text-color
 #	        inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
@@ -216,34 +214,35 @@ assign [class="discord"] $ws5
 assign [class="TelegramDesktop"] $ws4
 
 # startup processes
-exec alacritty
-#exec wezterm
+exec i3-msg 'workspace 1; exec wezterm'
 exec_always nitrogen --restore
 exec_always picom
-#exec_always pavucontrol
-#exec_always ~/scripts/launchsptwindow.sh
-#exec_always obsidian
-exec_always spotify
+exec i3-msg 'workspace 2; exec brave-browser'
+exec i3-msg 'workspace 3; exec spotify'
+exec i3-msg 'workspace 4; exec telegram-desktop'
 #exec_always discord
-exec_always telegram-desktop
 #exec_always i3-msg 'workspace 2; exec ~/.dotfiles/scripts/bin/.local/scripts/launch-brave'
-exec_always i3-msg 'workspace 2; exec brave-browser'
-#exec_always ~/.config/polybar/launch.sh
+exec_always ~/.config/polybar/launch.sh
 #exec_always --no-startup-id yabar
-exec_always ~/.dotfiles/scripts/bin/.local/scripts/xrandr-stuff
+#exec_always ~/.dotfiles/scripts/bin/.local/scripts/launch-polybar
 exec_always ~/.dotfiles/scripts/bin/.local/scripts/tmux-daemon
 #exec_always xrandr-stuff
 
 default_border pixel 1
 
 # gaps
-gaps inner 6px 
+#gaps inner 6px 
 
 workspace 6 gaps outer 10px
+workspace 6 gaps inner 10px
 workspace 7 gaps outer 10px
+workspace 7 gaps inner 10px
 workspace 8 gaps outer 10px
+workspace 8 gaps inner 10px
 workspace 9 gaps outer 10px
+workspace 9 gaps inner 10px
 workspace 10 gaps outer 10px
+workspace 10 gaps inner 10px
 
 
 title_align center
@@ -257,4 +256,3 @@ title_align center
 # Smart Borders on | off | no_gaps
 smart_borders on
 
-hide_edge_borders vertical

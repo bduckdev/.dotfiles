@@ -1,4 +1,7 @@
 vim.opt.guicursor = ""
+vim.g.netrw_banner = 0
+vim.g.netrw_menu = 1
+vim.g.netrw_bufsettings = "noma nomod nu nobl nowrap ro"
 
 vim.opt.nu = true
 vim.opt.relativenumber = true

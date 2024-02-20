@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
---vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -44,3 +44,11 @@ vim.keymap.set("n", "gt", ":e ~/Documents/GLOBAL_TODOS.md<CR>")
 -- go back + go foward
 vim.keymap.set("n", "gb", ":bprev<CR>")
 vim.keymap.set("n", "gf", ":bnext<CR>")
+
+vim.api.nvim_create_user_command("Norel", function()
+	vim.opt.relativenumber = false
+end, {})
+
+vim.api.nvim_create_user_command("Yesrel", function()
+	vim.opt.relativenumber = true
+end, {})

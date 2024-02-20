@@ -1,0 +1,6 @@
+#!/bin/bash
+
+i3 'workspace 1; exec wezterm'
+i3 'workspace 2; exec brave-browser'
+i3 'workspace 3; exec spotify'
+i3 'workspace 4; exec telegram-desktop'
