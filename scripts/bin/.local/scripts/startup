@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if xrandr | grep "DP-1-2 connected"  2> /dev/null; then
+    autorandr docked
+fi
+

@@ -149,7 +149,8 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-msg exit"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -206,27 +207,15 @@ bindsym $mod+r mode "resize"
 #}
 
 # assign
-assign [class="obsidian"] $ws3
-assign [class="Pavucontrol"] $ws4
-assign [class="sptwindow"] $ws4
 assign [class="Spotify"] $ws3
-assign [class="discord"] $ws5
 assign [class="TelegramDesktop"] $ws4
+assign [class="discord"] $ws5
 
 # startup processes
-exec i3-msg 'workspace 1; exec wezterm'
+exec ~/.dotfiles/scripts/bin/.local/scripts/launchapps
 exec_always nitrogen --restore
 exec_always picom
-exec i3-msg 'workspace 2; exec brave-browser'
-exec i3-msg 'workspace 3; exec spotify'
-exec i3-msg 'workspace 4; exec telegram-desktop'
-#exec_always discord
-#exec_always i3-msg 'workspace 2; exec ~/.dotfiles/scripts/bin/.local/scripts/launch-brave'
-exec_always ~/.config/polybar/launch.sh
-#exec_always --no-startup-id yabar
-#exec_always ~/.dotfiles/scripts/bin/.local/scripts/launch-polybar
 exec_always ~/.dotfiles/scripts/bin/.local/scripts/tmux-daemon
-#exec_always xrandr-stuff
 
 default_border pixel 1
 
