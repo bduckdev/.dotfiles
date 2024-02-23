@@ -1,9 +1,3 @@
 #!/bin/bash
 
 setxkbmap
-
-pkill -9 alacritty
-
-alacritty
-
-tmux

@@ -14,8 +14,3 @@ mode 2560x1600
 pos 0x0
 primary
 rate 165.00
-x-prop-broadcast_rgb Automatic
-x-prop-colorspace Default
-x-prop-max_bpc 12
-x-prop-non_desktop 0
-x-prop-scaling_mode Full aspect
