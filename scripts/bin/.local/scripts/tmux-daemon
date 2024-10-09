@@ -1,6 +1,0 @@
-#!/bin/bash
-
-if [ -z "$TMUX" ]; then
-    tmux new-session -d -s main
-fi
-

@@ -40,12 +40,14 @@ return {
 			vim.keymap.set("n", "<C-t>", function()
 				ui.nav_file(2)
 			end)
-			vim.keymap.set("n", "<C-s>", function()
-				ui.nav_file(4)
-			end)
 			vim.keymap.set("n", "<C-n>", function()
 				ui.nav_file(3)
 			end)
+			vim.keymap.set("n", "<C-s>", function()
+				ui.nav_file(4)
+			end)
+			vim.api.nvim_set_hl(0, "HarpoonWindow", { link = "Normal" })
+			vim.api.nvim_set_hl(0, "HarpoonBorder", { link = "Normal" })
 		end,
 	},
 	{

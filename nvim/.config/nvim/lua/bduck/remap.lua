@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+--vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -39,16 +39,19 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 --vim.api.nvim_create_user_command("LSX", "LiveServerStop", {})
 
 -- go to global todos
-vim.keymap.set("n", "gt", ":e ~/Documents/GLOBAL_TODOS.md<CR>")
+vim.keymap.set("n", "gt", ":e ~/TODOS.md<CR>")
 
 -- go back + go foward
 vim.keymap.set("n", "gb", ":bprev<CR>")
 vim.keymap.set("n", "gf", ":bnext<CR>")
 
 vim.api.nvim_create_user_command("Norel", function()
-	vim.opt.relativenumber = false
+    vim.opt.relativenumber = false
 end, {})
 
 vim.api.nvim_create_user_command("Yesrel", function()
-	vim.opt.relativenumber = true
+    vim.opt.relativenumber = true
 end, {})
+
+vim.keymap.set("n", "<leader>t", ":tab term<cr>")
+vim.keymap.set("t", "<leader>t", "<c-d>")

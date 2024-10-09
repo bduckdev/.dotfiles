@@ -1,0 +1,55 @@
+command=$SCRIPT_DIR/$BLOCK_NAME/$BLOCK_NAME
+separator_block_width=10
+markup=none
+
+#[cool-text]
+#command=echo " stop ricing your linux. it works fine. "
+#color=#f89f24
+#interval=once
+
+[song]
+command=playerctl -p spotify  metadata --format "  {{trunc(artist , 10)}} | {{trunc(title, 15)}}"
+color=#2ebd59
+interval=1
+
+[volume-pipewire]
+LONG_FORMAT="${SYMB} ${VOL}%"
+interval=persist
+SUBSCRIBE=1
+#USE_ALSA_NAME=0
+
+#[brightness]
+#command=$SCRIPT_DIR/brightness/bin/brightness
+#interval=persist
+#SE_SUDO=1
+
+[batterybar]
+interval=5
+markup=pango
+min_width=bat: ■■■■■
+#Discharging colors low to high
+C1=#FF0027
+C2=#FF3B05
+C3=#FFB923
+C4=#FFD000
+C5=#E4FF00
+C6=#ADFF00
+C7=#6DFF00
+C8=#10BA00
+CHARGING_COLOR=#00AFE3
+FULL_COLOR=#FFFFFF
+AC_COLOR=#535353
+
+[weather_NOAA]
+label=󰖐 
+LAT=36
+LON=-84
+interval=600
+
+[time]
+interval=1
+#TZ_FILE=~/.tz
+STRFTIME_FORMAT=  %A %B %d %G | 󰥔  %r
+TZONES=$DEFAULT_TZ,US/Eastern,US/Central,US/Mountain,US/Pacific
+TZ_LABELS=,EST,CST,MST,PST
+

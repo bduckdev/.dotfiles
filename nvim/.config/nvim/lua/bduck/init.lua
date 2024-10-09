@@ -2,3 +2,5 @@
 require("bduck.remap")
 require("bduck.set")
 require("bduck.misc")
+--require("bduck.custom.btw")
+--require("bduck.custom.telescope-on-launch")

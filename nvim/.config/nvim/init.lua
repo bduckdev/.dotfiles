@@ -1,4 +1,3 @@
-require("bduck")
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -10,6 +9,9 @@ if not vim.loop.fs_stat(lazypath) then
         lazypath,
     })
 end
+
 vim.opt.rtp:prepend(lazypath)
 
+require("bduck")
 require("lazy").setup("plugins")
+require("colors")

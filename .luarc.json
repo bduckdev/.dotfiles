@@ -1,0 +1,15 @@
+{
+    "diagnostics.globals": [
+        "client",
+        "screen",
+        "awesome",
+        "mykeyboardlayout",
+        "mylauncher",
+        "mymainmenu",
+        "myawesomemenu",
+        "root",
+        "globalkeys",
+        "clientkeys",
+        "clientbuttons"
+    ]
+}

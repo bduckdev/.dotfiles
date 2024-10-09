@@ -13,10 +13,10 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Hack 14
+font pango:Hack 8
 
 #no titles
-default_border pixel 1
+default_border pixel 2
 hide_edge_borders smart
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -39,11 +39,16 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
+
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Backlight
+bindsym XF86MonBrightnessUp exec brightnessctl -c backlight set "+5%"
+bindsym XF86MonBrightnessDown exec brightnessctl -c backlight set 5%-
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -112,11 +117,28 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-# monitors
-set $builtin eDP-1
-set $uw DP-1-2
+# screenshot
+bindsym $mod+Shift+s exec "shutter"
 
+# randomize wallpaper
+bindsym $mod+Shift+w exec "~/.dotfiles/scripts/.local/scripts/random-wall"
+#bindsym $mod+Shift+w exec "feh --bg-center --randomize ~/Pictures/Wallpapers/powerful"
+
+# monitors
+set $builtin eDP-1-1
+set $uw DP-2
+set $lg HDMI-0
+
+workspace 1 output $builtin
+workspace 2 output $builtin
+workspace 3 output $builtin
+workspace 4 output $builtin
+workspace 5 output $builtin
 workspace 6 output $uw
+workspace 7 output $uw
+workspace 8 output $uw
+workspace 9 output $uw
+workspace 10 output $uw
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -170,10 +192,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -191,17 +213,41 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+set $barfont Hack 16
+
 bar {
+        font pango: $barfont
         output $builtin
-        status_command i3status
+        position top
+        status_command i3status -c "~/.dotfiles/i3/.config/i3/i3status.conf"
+        #status_command SCRIPT_DIR=/home/bduck/.dotfiles/i3/.config/i3blocks i3blocks
+}
+
+bar {
+        font pango: $barfont
+        output $uw
+        #position top
+        #tray_output none
+        status_command i3status -c "~/.dotfiles/i3/.config/i3/i3status.conf"
+        #status_command SCRIPT_DIR=/home/bduck/.dotfiles/i3/.config/i3blocks i3blocks -c ~/.config/i3blocks/bigmonitor
 }
 bar {
-        output $uw
+        font pango: $barfont
+        output $lg
         position top
-        tray_output none
+        #tray_output none
+       # status_command SCRIPT_DIR=/home/bduck/.dotfiles/i3/.config/i3blocks i3blocks -c ~/.config/i3blocks/bigmonitor
+        status_command i3status -c "~/.dotfiles/i3/.config/i3/i3status.conf"
 }
+
+#assignments
+assign [ class = "discord" ] 5
+
 # startup
-exec "~/.dotfiles/scripts/bin/.local/scripts/launchapps"
-exec picom
-exec_always "~/.dotfiles/scripts/bin/.local/scripts/tmux-daemon"
-exec_always nitrogen --restore
+exec nitrogen --restore
+exec "~/.dotfiles/scripts/.local/scripts/launchapps"
+#exec feh --bg-center ~/Pictures/Wallpapers/cat_crying.png
+
+# always exec
+exec_always "~/.dotfiles/scripts/.local/scripts/tmux-daemon"
+exec_always setxkbmap

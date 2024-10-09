@@ -15,8 +15,12 @@ return {
 					null_ls.builtins.formatting.black,
 					--ocaml
 					null_ls.builtins.formatting.ocamlformat,
-					--haskell
-					--                    null_ls.builtins.formatting.ormolu,
+					-- shell scripts
+					null_ls.builtins.formatting.shfmt,
+					-- go
+					null_ls.builtins.formatting.gofumpt,
+					-- rustfmt
+					--null_ls.builtins.formatting.rustfmt,
 				},
 			})
 
@@ -55,5 +59,8 @@ return {
 				},
 			})
 		end,
+	},
+	{
+		"kkoomen/vim-doge",
 	},
 }

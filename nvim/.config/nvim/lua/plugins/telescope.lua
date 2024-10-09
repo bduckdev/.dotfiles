@@ -13,6 +13,7 @@ return {
 			vim.keymap.set("n", "<C-p>", builtin.git_files, {})
 			vim.keymap.set("n", "<leader>ps", builtin.live_grep, {})
 			vim.keymap.set("n", "<leader>pb", builtin.buffers, {})
+			vim.keymap.set("n", "<leader><leader>h", ":Telescope help_tags<CR>")
 		end,
 	},
 	{
@@ -26,6 +27,7 @@ return {
 				},
 			})
 			require("telescope").load_extension("ui-select")
+			require("telescope").load_extension("harpoon")
 		end,
 	},
 	{

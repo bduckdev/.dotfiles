@@ -1,26 +1,30 @@
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
+local naughty = require("naughty")
 
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font = "San Francisco Display Regular 10"
+theme.font = "San Francisco Display 12"
 
-theme.bg_normal = "#222222"
-theme.bg_focus = "#535d6c"
-theme.bg_urgent = "#222222"
+theme.bg_normal = "#000000"
+theme.bg_focus = "#0000000"
+theme.bg_urgent = "#22222200"
 theme.bg_minimize = "#444444"
-theme.bg_systray = theme.bg_normal
+--theme.bg_systray = theme.bg_normal
+theme.bg_systray = "#44444400"
 
 theme.fg_normal = "#aaaaaa"
 theme.fg_focus = "#ffffff"
 theme.fg_urgent = "#aaaaaa"
 theme.fg_minimize = "#ffffff"
 
-theme.useless_gap = dpi(0)
+theme.useless_gap = dpi(6)
+--theme.gap_single_client = false
+theme.sing = dpi(3)
 theme.border_width = dpi(1)
 theme.border_normal = "#000000"
 theme.border_focus = "#9ccfd8"
@@ -40,15 +44,17 @@ theme.border_marked = "#91231c"
 --theme.taglist_bg_focus = "#ff0000"
 
 -- Generate taglist squares:
-local taglist_square_size = dpi(4)
-theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.fg_normal)
-theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
+--local taglist_square_size = dpi(4)
+--theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.fg_normal)
+--theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
 
 -- Variables set for theming notifications:
 -- notification_font
 -- notification_[bg|fg]
 -- notification_[width|height|margin]
 -- notification_[border_color|border_width|shape|opacity]
+theme.notification_width = dpi(400)
+theme.notification_height = dpi(100)
 
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
@@ -89,7 +95,7 @@ theme.titlebar_maximized_button_focus_inactive = themes_path .. "default/titleba
 theme.titlebar_maximized_button_normal_active = themes_path .. "default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active = themes_path .. "default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = "~/Pictures/Wallpapers/windows_vista.jpg"
+--theme.wallpaper = "/home/bduck/Pictures/Wallpapers/waifus/GTR.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path .. "default/layouts/fairhw.png"
@@ -114,7 +120,7 @@ theme.awesome_icon = theme_assets.awesome_icon(theme.menu_height, theme.bg_focus
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
-theme.icon_theme = nil
+--theme.icon_theme = "WhiteSur-Dark"
 
 return theme
 
