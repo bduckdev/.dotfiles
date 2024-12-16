@@ -235,7 +235,7 @@ awful.screen.connect_for_each_screen(function(s)
 	if s == screen.primary then
 		local names = { tag1, tag2, tag3, tag4, tag5, tag6, tag7, tag8 }
 		local l = awful.layout.suit
-		local layouts = { l.tile, l.tile, l.tile, l.tile, l.tile, l.tile, l.tile }
+		local layouts = { l.tile, l.tile, l.tile, l.tile, l.tile, l.tile, l.tile, l.floating }
 		awful.tag(names, s, layouts)
 	else
 		--local names = { "1", "2", "3", "4", "5" }
@@ -746,7 +746,7 @@ end)
 awful.spawn.with_shell("sh ~/.dotfiles/scripts/.local/scripts/tmux-daemon")
 awful.spawn.with_shell("~/.dotfiles/scripts/.local/scripts/launchapps-awesome.sh")
 awful.spawn.with_shell("pactl set-sink-volume @DEFAULT_SINK@ 100%")
-awful.spawn.with_shell("brightnessctl -c backlight -set 50%")
+awful.spawn.with_shell("brightnessctl -c backlight -set 100%")
 --awful.spawn.once("brave-browser", { floating = false, screen = 1, tag = tag2 })
 --awful.spawn.once("brave-browser", { floating = false, screen = 2 })
 --awful.spawn.once("wezterm", { floating = false, screen = 2 })

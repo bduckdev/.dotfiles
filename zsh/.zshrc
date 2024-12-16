@@ -116,12 +116,22 @@ alias findfile="fzf --preview 'bat --style=numbers --color=always {}' | xargs -r
 alias chat="ollama run dolphin-mixtral:latest"
 alias ccpp="c++"
 alias runekit="~/Downloads/RuneKit.AppImage 2> /dev/null &"
+alias ls="lsd"
 #alias nvim="zed"
 
+
 alias ta="tmux a"
-bindkey -s ^f "tmux-sessionizer\n"
+#bindkey -r ^h
+#bindkey -r ^j
+#bindkey -r ^k
+#bindkey -r ^l
+bindkey -r ^x
 bindkey -s ^a "tmux a\n"
 bindkey -s ^g "lazygit\n"
+bindkey -s ^e "echo fart\n"
+#bindkey ^x clear-terminal
+bindkey "^x" clear-screen
+bindkey -s ^f "tmux-sessionizer\n"
 #bindkey -s ^a "zellij a\n"
 #bindkey -s ^e "nvim $(fzf)\n"
 
@@ -193,4 +203,20 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/go
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/bduck/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/bduck/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/bduck/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/bduck/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 

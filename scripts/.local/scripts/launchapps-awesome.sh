@@ -17,6 +17,8 @@ LAUNCHMEDADDY=(
     "tmux-daemon"
     "discord"
     "nm-applet"
+    "brightnessctl -c backlight set 100%"
+    "autorandr docked"
 )
 
 HASCTE=false

@@ -1,5 +1,5 @@
 local fancy = false
-local Color = "#282c34"
+local Color = "#283c34"
 local transparent = true
 local bg_opacity = 0.7
 if transparent == false then
@@ -54,20 +54,32 @@ if fancy == true then
     }
     return Background
 else
+    --[[
+	Background = {
+		{
+			source = {
+				Color = "black",
+			},
+			opacity = bg_opacity,
+			width = "100%",
+			height = "100%",
+		},
+		{
+			source = {
+				Color = Color,
+			},
+			opacity = 0.25,
+			width = "100%",
+			height = "100%",
+		},
+	}
+    ]]
     Background = {
         {
             source = {
                 Color = "black",
             },
             opacity = bg_opacity,
-            width = "100%",
-            height = "100%",
-        },
-        {
-            source = {
-                Color = Color,
-            },
-            opacity = 0.25,
             width = "100%",
             height = "100%",
         },

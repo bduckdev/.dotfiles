@@ -1,5 +1,6 @@
 #import = ["/home/bduck/.config/alacritty/tokyo-night.yml"]
-import = ["/home/bduck/.config/alacritty/rose-pine.toml"]
+#import = ["/home/bduck/.config/alacritty/rose-pine.toml"]
+import = ["/home/bduck/.config/alacritty/doom-one-dark.toml"]
 #import = ["/home/bduck/.config/alacritty/gruvbox.yml"]
 
 [shell]

@@ -34,10 +34,6 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 -- make executable and run
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
----- live server (need to decide how i want to implement
---vim.api.nvim_create_user_command("LSS", "LiveServerStart", {})
---vim.api.nvim_create_user_command("LSX", "LiveServerStop", {})
-
 -- go to global todos
 vim.keymap.set("n", "gt", ":e ~/TODOS.md<CR>")
 
@@ -46,12 +42,18 @@ vim.keymap.set("n", "gb", ":bprev<CR>")
 vim.keymap.set("n", "gf", ":bnext<CR>")
 
 vim.api.nvim_create_user_command("Norel", function()
-    vim.opt.relativenumber = false
+	vim.opt.relativenumber = false
 end, {})
 
 vim.api.nvim_create_user_command("Yesrel", function()
-    vim.opt.relativenumber = true
+	vim.opt.relativenumber = true
 end, {})
 
 vim.keymap.set("n", "<leader>t", ":tab term<cr>")
 vim.keymap.set("t", "<leader>t", "<c-d>")
+
+-- window navigation
+vim.keymap.set("n", "<C-h>", ":wincmd h<CR>")
+vim.keymap.set("n", "<C-j>", ":wincmd j<CR>")
+vim.keymap.set("n", "<C-k>", ":wincmd k<CR>")
+vim.keymap.set("n", "<C-l>", ":wincmd l<CR>")
